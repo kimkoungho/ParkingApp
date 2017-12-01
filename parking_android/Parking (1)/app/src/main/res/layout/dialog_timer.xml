@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:padding="10dp"
+              android:background="@drawable/round_rect2">
+
+    <!--내용변경 UI-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="예상 주차 시간"
+            android:textColor="#0e74bc"
+            android:textSize="12dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:maxLines="1"
+                    android:maxLength="2"
+                    android:inputType="numberDecimal"
+                    android:hint="00"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:backgroundTint="#fff"
+                    android:id="@+id/parking_hour"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:maxLines="1"
+                    android:text="시간"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:textColor="#000"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:maxLines="1"
+                    android:maxLength="2"
+                    android:inputType="numberDecimal"
+                    android:hint="00"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:backgroundTint="#fff"
+                    android:id="@+id/parking_minute"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:maxLines="1"
+                    android:text="분"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_line"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_line"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="주차 시간 완료 전 알림 시간"
+                android:textColor="#0e74bc"
+                android:textSize="12dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:maxLines="1"
+                        android:maxLength="2"
+                        android:inputType="numberDecimal"
+                        android:hint="00"
+                        android:textSize="20dp"
+                        android:textAlignment="center"
+                        android:backgroundTint="#fff"
+                        android:id="@+id/noti_hour"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:maxLines="1"
+                        android:text="시간"
+                        android:textSize="20dp"
+                        android:textAlignment="center"
+                        android:textColor="#000"/>
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:maxLines="1"
+                        android:maxLength="2"
+                        android:inputType="numberDecimal"
+                        android:hint="00"
+                        android:textSize="20dp"
+                        android:textAlignment="center"
+                        android:backgroundTint="#fff"
+                        android:id="@+id/noti_minute"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:maxLines="1"
+                        android:text="분"
+                        android:textSize="20dp"
+                        android:textAlignment="center"
+                        android:textColor="#000"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_line"/>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_weight="1"/>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_line"/>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!--버튼 레이아웃-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:layout_gravity="right">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:background="@android:color/transparent"
+            android:text="취소"
+            android:textColor="#0e74bc"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:id="@+id/cancel_btn"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@android:color/transparent"
+            android:text="설정"
+            android:textColor="#0e74bc"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:id="@+id/setting_btn"/>
+
+    </LinearLayout>
+
+</LinearLayout>

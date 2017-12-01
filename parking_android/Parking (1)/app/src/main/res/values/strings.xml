@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">여기에 주차</string>
+    <string name="title_activity_navi">NaviActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="TMAP_API_KEY1">fe77fde6-c8bd-3c68-8f3b-7c6439f5471b</string>  <!--YoungWuk-->
+    <string name="TMAP_API_KEY2">796ea8a7-b571-3249-961b-d3d5e57bcf93</string>  <!--KyoungHo-->
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/navi_menu_home"
+            android:title="" />
+        <item
+            android:id="@+id/nav_current"
+            android:icon="@drawable/navi_menu_current"
+            android:title=""/>
+        <item
+            android:id="@+id/nav_target"
+            android:icon="@drawable/navi_menu_target"
+            android:title=""/>
+        <item
+            android:id="@+id/nav_favorite"
+            android:icon="@drawable/navi_menu_favorite"
+            android:title=""/>
+        <item
+            android:id="@+id/nav_car_position"
+            android:icon="@drawable/navi_menu_car_position"
+            android:title=""/>
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/navi_menu_setting"
+            android:title=""/>
+        <item
+            android:id="@+id/nav_manual"
+            android:icon="@drawable/navi_menu_manual"
+            android:title=""/>
+    </group>
+
+    <!--<item android:title="Communicate">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_share"-->
+                <!--android:icon="@drawable/ic_menu_share"-->
+                <!--android:title="Share" />-->
+            <!--<item-->
+                <!--android:id="@+id/nav_send"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="Send" />-->
+        <!--</menu>-->
+    <!--</item>-->
+
+</menu>

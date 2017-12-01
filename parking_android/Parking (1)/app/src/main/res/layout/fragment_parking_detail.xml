@@ -1,0 +1,586 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context="com.parking.kani.parking.fragment.ParkingDetailFragment"
+    tools:ignore="missingPrefix">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/image_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <android.support.v4.view.ViewPager
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:padding="2dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/park_img_changer">
+
+                </android.support.v4.view.ViewPager>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:id="@+id/park_img_pagination">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="275dp"
+                android:layout_margin="15dp"
+                android:padding="2dp"
+                android:orientation="horizontal"
+                android:background="@drawable/border1"
+                android:id="@+id/tmap_route_layout"
+                android:visibility="gone">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/navi_btn"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_margin="5dp"
+                        android:paddingBottom="5dp"
+                        android:gravity="bottom"
+                        android:text="길 찾기"
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:textSize="15dp"
+                        android:background="@drawable/detail_navi_link_no_input"/>
+
+                    <Button
+                        android:id="@+id/view_map_btn"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_margin="5dp"
+                        android:paddingBottom="5dp"
+                        android:gravity="bottom"
+                        android:text="지도보기"
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:textSize="15dp"
+                        android:background="@drawable/detail_show_map_no_input"/>
+
+                    <Button
+                        android:id="@+id/score_btn"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_margin="5dp"
+                        android:paddingBottom="5dp"
+                        android:gravity="bottom"
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:textSize="15dp"
+                        android:background="@drawable/detail_score_no_input"/>
+
+                    <Button
+                        android:id="@+id/favorite_btn"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_margin="5dp"
+                        android:paddingBottom="5dp"
+                        android:gravity="bottom"
+                        android:text="즐겨찾기"
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:textSize="15dp"
+                        android:background="@drawable/detail_favorite_no_input"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/set_score_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center">
+
+                        <com.iarcuschin.simpleratingbar.SimpleRatingBar
+                            android:id="@+id/park_star"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:srb_numberOfStars="5"
+                            app:srb_rating="3.5"
+                            app:srb_stepSize="0.5"
+                            app:srb_starSize="40dp"
+                            app:srb_starBackgroundColor="#d9d9d9"
+                            app:srb_starBorderWidth="2"
+                            app:srb_borderColor="#4490c4"
+                            app:srb_fillColor="#ffb601"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/score_set_btn"
+                            android:layout_width="100dp"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:textColor="#fff"
+                            android:text="평점 주기"
+                            android:textSize="16dp"
+                            android:background="@drawable/bg_round_rect"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--버튼 아래 중간 레이아웃-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical">
+
+                    <org.apmem.tools.layouts.FlowLayout
+                        android:id="@+id/park_theme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="3dp"
+                        android:paddingBottom="3dp"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp">
+
+                    </org.apmem.tools.layouts.FlowLayout>
+
+                    <TextView
+                        android:id="@+id/park_name_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:text="파파호 청담점"
+                        android:textColor="#000"
+                        android:textStyle="bold"
+                        android:textSize="25dp"/>
+
+                    <TextView
+                        android:id="@+id/park_addr_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="서울특별시 강남구 청담동 68-19"
+                        android:textSize="13dp"
+                        android:textColor="#000"/>
+
+                    <Button
+                        android:id="@+id/park_tel_btn"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="15dp"
+                        android:paddingLeft="30dp"
+                        android:layout_gravity="right"
+                        android:text="02-1588-5783"
+                        android:textColor="#fff"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:background="@drawable/icon_phone"/>
+
+                </LinearLayout>
+
+                <!--상세 정보 출력-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="vertical">
+
+                    <!--주차 요금-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#0e74bc"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:text="주차요금"/>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/bg_line"/>
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="■ 1시간 기준 : "
+                                        android:textColor="#000"
+                                        android:textSize="12dp"/>
+
+                                    <TextView
+                                        android:id="@+id/park_hour_cost"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text=""
+                                        android:textColor="#000"
+                                        android:textSize="12dp"/>
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="■ 일일 요금 : "
+                                        android:textColor="#000"
+                                        android:textSize="12dp"/>
+
+                                    <TextView
+                                        android:id="@+id/park_day_cost"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text=""
+                                        android:textColor="#000"
+                                        android:textSize="12dp"/>
+
+                                </LinearLayout>
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="■ 최초 요금 : "
+                                        android:textColor="#000"
+                                        android:textSize="12dp"/>
+
+                                    <TextView
+                                        android:id="@+id/park_base_time_cost"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text=""
+                                        android:textColor="#000"
+                                        android:textSize="12dp"/>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="■ 월 정기 요금 : "
+                                        android:textColor="#000"
+                                        android:textSize="12dp"/>
+
+                                    <TextView
+                                        android:id="@+id/park_month_cost"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text=""
+                                        android:textColor="#000"
+                                        android:textSize="12dp"/>
+
+                                </LinearLayout>
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="■ 추가 요금 : "
+                                        android:textColor="#000"
+                                        android:textSize="12dp"/>
+
+                                    <TextView
+                                        android:id="@+id/park_add_time_cost"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text=""
+                                        android:textColor="#000"
+                                        android:textSize="12dp"/>
+
+                                </LinearLayout>
+                            </TableRow>
+                        </TableLayout>
+
+                    </LinearLayout>
+
+                    <!--운영 시간-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#0e74bc"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:text="운영시간"/>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/bg_line"/>
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="■ 평일 :  "
+                                    android:textColor="#000"
+                                    android:textSize="12dp"/>
+
+                                <TextView
+                                    android:id="@+id/weekday_time"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textColor="#000"
+                                    android:textSize="12dp"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="■ 주말 :  "
+                                    android:textColor="#000"
+                                    android:textSize="12dp"/>
+
+                                <TextView
+                                    android:id="@+id/weekend_time"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textColor="#000"
+                                    android:textSize="12dp"/>
+
+                            </TableRow>
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="■ 공휴일 :  "
+                                    android:textColor="#000"
+                                    android:textSize="12dp"/>
+
+                                <TextView
+                                    android:id="@+id/holiday_time"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textColor="#000"
+                                    android:textSize="12dp"/>
+
+                            </TableRow>
+                        </TableLayout>
+
+                    </LinearLayout>
+
+                    <!--주차 가능 대수-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#0e74bc"
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:text="주차 가능 대수"/>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/bg_line"/>
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <!--<LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="■ 주차면적 : "
+                                        android:textColor="#000"
+                                        android:textSize="12dp"/>
+
+                                    <TextView
+                                        android:id="@+id/available_coverage"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="1,23km"
+                                        android:textColor="#000"
+                                        android:textSize="12dp"/>
+
+                                </LinearLayout>-->
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="■ 주차 가능 대수 : "
+                                        android:textColor="#000"
+                                        android:textSize="12dp"/>
+
+                                    <TextView
+                                        android:id="@+id/available_car_num"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=""
+                                        android:textColor="#000"
+                                        android:textSize="12dp"/>
+
+                                </LinearLayout>
+                            </TableRow>
+
+                        </TableLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

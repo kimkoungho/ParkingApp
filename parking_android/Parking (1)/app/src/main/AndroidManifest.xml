@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.parking.kani.parking">
+
+    <!-- GPS -->
+    <uses-permission android:name="android.permission.ACCESS_GPS"/>
+    <uses-permission android:name="android.permission.ACCESS_ASSISTED_GPS"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-feature android:name="android.hardware.location.gps"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_OWNER_DATA"/>
+    <uses-permission android:name="android.permission.READ_OWNER_DATA"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <!-- 전화 -->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <!-- 진동 -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <!-- 잠금화면 깨움 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_SERVICE"/>
+
+    <application
+        android:name=".utility.CustomStartApp"
+        android:allowBackup="true"
+        android:icon="@drawable/icon_app"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".activity.MainActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.NaviActivity"
+            android:label="@string/title_activity_navi"
+            android:theme="@style/AppTheme2.NoActionBar"/>
+        <activity
+            android:name=".activity.SettingActivity"
+            android:theme="@style/AppTheme2.NoActionBar"/>
+        <activity
+            android:name=".activity.SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".activity.RegistActivity"/>
+        <activity android:name=".activity.ManualActivity"/>
+        <activity android:name=".activity.ManualDetailActivity"/>
+        <activity
+            android:name=".activity.MyAcountActivity"
+            android:theme="@style/AppTheme2.NoActionBar"/>
+
+        <service
+            android:name=".utility.TimeNotiService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <receiver android:name=".utility.NotiBroadcaster"/>
+
+    </application>
+
+</manifest>

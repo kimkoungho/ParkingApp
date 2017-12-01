@@ -1,0 +1,45 @@
+<resources>
+
+    <!--커스텀 테마-->
+    <style name="AppTheme2" parent="Theme.AppCompat.NoActionBar">
+        <!--AppBar 색-->
+        <item name="colorPrimary">#0e74bc</item>
+        <!--위에 시간, 배터리 잔량 등이 표시되는 부분-->
+        <item name="colorPrimaryDark">#0e74bc</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--<item name="windowBackground">#ffffff</item>-->
+    </style>
+
+    <style name="AppTheme2.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <!--커스텀 테마 여기까지-->
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="customRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/custom_ratingbar</item>
+        <item name="android:minHeight">100dp</item>
+        <item name="android:maxHeight">100dp</item>
+    </style>
+
+    <style name="Theme.Dialog" parent="android:Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+</resources>
